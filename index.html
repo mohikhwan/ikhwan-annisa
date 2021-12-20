@@ -8,12 +8,12 @@
 	<meta name="keywords" content="ikhwan, annisa, menikah, wedding, invitation" />
 	<meta name="author" content="ikhwan-annisa" />
 	<meta property="og:title" content="Ikhwan & Annisa Wedding"/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
+	<meta property="og:image" content="images/img_bg_2.jpg"/>
+	<meta property="og:url" content="https://mohikhwan.github.io/ikhwan-annisa"/>
 	<meta property="og:site_name" content="Ikhwan & Annisa Wedding"/>
 	<meta property="og:description" content="Ikhwan & Annisa Wedding"/>
 	<meta name="twitter:title" content="Ikhwan & Annisa Wedding" />
-	<meta name="twitter:image" content="" />
+	<meta name="twitter:image" content="images/img_bg_2.jpg" />
 	<meta name="twitter:url" content="Ikhwan & Annisa Wedding" />
 	<meta name="twitter:card" content="" />
 
@@ -136,9 +136,15 @@
 					<h3>di Pekalongan, Jawa Tengah.</h3>
 					<p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila <i>Bapak/Ibu/Saudara/i</i> <b class="guest-name"></b> berkenan hadir untuk memberikan doa restu kepada kedua mempelai.</p>
 				</div>
-				<div class="col-sm-12">
-					<div id="qrcode"></div>
-				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="fh5co-section-gray" style="padding: 5em 0;">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<div id="qrcode"></div>
+				<p style="margin: 20px 0 0 0;">Mohon tunjukkan <b>QR Code</b> di atas pada saat memasuki area resepsi</p>
 			</div>
 		</div>
 	</div>
@@ -421,8 +427,8 @@
 			</div>
 
 		</div>
-	</footer>
-	</div>
+</footer>
+</div>
 <div style="height:50px;width:60px;position: absolute;bottom:0;z-index:-1;visibility: hidden;">
 	<audio id="player" autoplay loop>
 		<source src="qRwWgRqE8D.mp3" type="audio/mp3" >
@@ -464,20 +470,26 @@
 	<script>
     var d = new Date(2022, 02, 12, 06, 00, 00, 0);
 
-    // default example
     simplyCountdown('.simply-countdown-one', {
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate()
+			year: d.getFullYear(),
+			month: d.getMonth() + 1,
+			day: d.getDate(),
+			words: {
+				days: 'hari',
+				hours: 'jam',
+				minutes: 'menit',
+				seconds: 'detik',
+				pluralLetter: ''
+			},
     });
 
     //jQuery example
-    $('#simply-countdown-losange').simplyCountdown({
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate(),
-        enableUtc: false
-    });
+    // $('#simply-countdown-losange').simplyCountdown({
+    //     year: d.getFullYear(),
+    //     month: d.getMonth() + 1,
+    //     day: d.getDate(),
+    //     enableUtc: false
+    // });
 
 		const queryString = window.location.search;
 		const urlParams = new URLSearchParams(queryString);
@@ -498,13 +510,15 @@
 		// window.addEventListener("contextmenu", function(e) {
 		// 		e.preventDefault()
 		// }, !1);
-		var qrtext = guestName+';'+guestPlace+';'+guestReff;
+		var qrtext = 'Ikhwan&Annisa;'+guestName+';'+guestPlace+';'+guestReff;
 		var qrcode = new QRCode("qrcode", {
 			width: 200,
 			height: 200,
+			colorDark : "#000000",
+    	colorLight : "#f5f5f5",
 		});
 		qrcode.makeCode(qrtext);
-</script>
+	</script>
 
 	</body>
 </html>
