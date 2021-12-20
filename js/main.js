@@ -199,8 +199,8 @@
 	};
 
 	var counterWayPoint = function() {
-		if ($('#fh5co-counter').length > 0 ) {
-			$('#fh5co-counter').waypoint( function( direction ) {
+		if ($('#quote').length > 0 ) {
+			$('#quote').waypoint( function( direction ) {
 										
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 					setTimeout( counter , 400);					
@@ -215,6 +215,45 @@
 		$(window).stellar();
 	};
 
+	var ancor_link = function() {
+    var lastId,
+    topMenu = $("#bot-menu"),
+    topMenuHeight = topMenu.outerHeight()+15,
+
+    menuItems = topMenu.find("a"),
+
+    scrollItems = menuItems.map(function(){
+      var item = $($(this).attr("href"));
+      if (item.length) { return item; }
+    });
+
+    $('.nav-link').on('click', function(){
+      $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+      }, 500);
+    });
+
+    $(window).scroll(function(){
+      var fromTop = $(this).scrollTop()+topMenuHeight;
+
+      var cur = scrollItems.map(function(){
+        if ($(this).offset().top < fromTop)
+          return this;
+      });
+
+      cur = cur[cur.length-1];
+      var id = cur && cur.length ? cur[0].id : "";
+
+      if (lastId !== id) {
+          lastId = id;
+
+          menuItems
+            .parent().removeClass("active")
+            .end().filter("[href='#"+id+"']").parent().addClass("active");
+      }
+   });
+  };
+
 	
 	$(function(){
 		mobileMenuOutsideClick();
@@ -228,6 +267,7 @@
 		loaderPage();
 		counter();
 		counterWayPoint();
+		ancor_link();
 	});
 
 
@@ -314,48 +354,10 @@ document.addEventListener("DOMContentLoaded",()=>{
 	$(".open_invitation").click(function(){i()})
 });
 
-
-
 $('.guestbook-open').on('click', function(event){
 	event.preventDefault();
 	$('html, body').animate({
-		scrollTop: $('#formGuestBook').offset().top
+		scrollTop: $('#guestbook').offset().top
 	}, 'slow');
 	return false;
 });
-
-function goToUtama(){
-	event.preventDefault();
-	$('html, body').animate({
-		scrollTop: $('#fh5co-header').offset().top
-	}, 'slow');
-	return false;
-}
-function goToLokasi(){
-	event.preventDefault();
-	$('html, body').animate({
-		scrollTop: $('#fh5co-map').offset().top
-	}, 'slow');
-	return false;
-}
-function goToGaleri(){
-	event.preventDefault();
-	$('html, body').animate({
-		scrollTop: $('#fh5co-gallery').offset().top
-	}, 'slow');
-	return false;
-}
-function goToUcapan(){
-	event.preventDefault();
-	$('html, body').animate({
-		scrollTop: $('#fh5co-testimonial').offset().top
-	}, 'slow');
-	return false;
-}
-function goToBukuTamu(){
-	event.preventDefault();
-	$('html, body').animate({
-		scrollTop: $('#formGuestBook').offset().top
-	}, 'slow');
-	return false;
-}
