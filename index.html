@@ -17,6 +17,7 @@
 	<meta name="twitter:url" content="Ikhwan & Annisa Wedding" />
 	<meta name="twitter:card" content="" />
 
+	<link href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 	
@@ -54,20 +55,15 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-2">
-					<div id="fh5co-logo"><a href="index.html">Menikah<strong>.</strong></a></div>
+					<div id="fh5co-logo"><a href="">Menikah<strong>.</strong></a></div>
 				</div>
 				<div class="col-xs-10 text-right menu-1">
 					<ul>
-						<li class="active"><a href="index.html">Utama</a></li>
-						<li><a href="about.html">Cerita</a></li>
-						<li class="has-dropdown">
-							<a href="gallery.html">Galeri</a>
-							<ul class="dropdown">
-								<li><a href="#">Galeri 1</a></li>
-								<li><a href="#">Galeri 2</a></li>
-							</ul>
-						</li>
-						<li><a href="contact.html">Kontak</a></li>
+						<li class="active"><a href="#" onclick="goToUtama()">Utama</a></li>
+						<li><a href="#" onclick="goToLokasi()">Lokasi</a></li>
+						<li><a href="#" onclick="goToGaleri()">Galeri</a></li>
+						<li><a href="#" onclick="goToUcapan()">Ucapan</a></li>
+						<li><a href="#" onclick="goToBukuTamu()">Buku Tamu</a></li>
 					</ul>
 				</div>
 			</div>
@@ -75,7 +71,7 @@
 		</div>
 	</nav>
 
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_2.jpg);background-position: center top;background-size: auto 100%" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_2.jpg);background-size: cover;background-position: center center;">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -83,16 +79,15 @@
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1>Ikhwan &amp; Annisa</h1>
-							<!-- <h2>Akan Menikah</h2> -->
-							<h2>12 Februari 2022</h2>
+							<h2>Sabtu, 12 Februari 2022</h2>
 							<div class="simply-countdown simply-countdown-one"></div>
 							<p>
-								<a href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20220112T030000Z/20220112T080000Z&text=Ikhwan+%26+Annisa+Wedding&details=Ikhwan+%26+Annisa+Wedding%0Apada+hari+Sabtu,+12+Februari+2022%0Adi+Kesesi+Pekalongan&location=Kesesi+Pekalongan+%7C+Jl.%20Raya%20Kesesi,%20Kaumam,%20Kaibahan,%20Kesesi,%20Kabupaten%20Pekalongan,%20Jawa%20Tengah&pli=1" class="btn btn-default btn-sm" target="_blank">Simpan tanggal</a>
-								<a href="#" class="btn btn-success btn-sm" target="_blank">Isi Buku Tamu</a>
+								<a href="https://calendar.google.com/calendar/u/0/r/eventedit?dates=20220112T030000Z/20220112T080000Z&text=Ikhwan+%26+Annisa+Wedding&details=Ikhwan+%26+Annisa+Wedding%0Apada+hari+Sabtu,+12+Februari+2022%0Adi+Kesesi+Pekalongan&location=Kesesi+Pekalongan+%7C+Jl.%20Raya%20Kesesi,%20Kaumam,%20Kaibahan,%20Kesesi,%20Kabupaten%20Pekalongan,%20Jawa%20Tengah&pli=1" class="btn btn-default btn-sm" target="_blank"><i class="icon-calendar"></i> Simpan tanggal</a>
+								<a href="#" class="btn btn-success btn-sm guestbook-open" target="_blank"><i class="icon-pencil"></i> Isi Buku Tamu</a>
 							</p>
-							<p>Kepada Yth<br>Bapak/Ibu/Saudara/i</p>
-							<span class="guest-name">TAM DBS</span>
-							<p>di Tempat</p>
+							<p>Kepada Yth<br><i>Bapak/Ibu/Saudara/i</i></p>
+							<h3 style="font-family: 'Sacramento', Arial, serif;color:#fff;font-weight:bold" class="guest-name">Tamu Undangan</h3>
+							<p>di <span class="guest-place">Tempat</span></p>
 						</div>
 					</div>
 				</div>
@@ -105,9 +100,7 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 					<h2>Assalamualaikum wr. wb.</h2>
-					<h3>12 Februari 2022</h3>
-					<h3>Pekalongan, Jawa Tengah</h3>
-					<p>Kami mengengundang kamu untuk menghadiri pernikahan kami</p>
+					<p>Dengan memohon rahmat dan ridho Allah SWT, Mohon do'a restu <i>Bapak/Ibu/Saudara/i</i> <b class="guest-name"></b> dalam rangka pernikahan:</p>
 				</div>
 			</div>
 			<div class="couple-wrap animate-box">
@@ -128,21 +121,23 @@
 						<img src="images/bride.jpg" alt="groom" class="img-responsive">
 					</div>
 					<div class="desc-bride">
-						<h3>Afiyatul Annisa, S.Ekos</h3>
+						<h3>Afiyatul Annisa, S.E</h3>
 						<p>Putri dari pasangan<br>
-							<b>Bapak Chairil<br>& Ibu Nur</b>
+							<b>Bapak Khairil<br>& Ibu Siti Nur Asih</b>
 						</p>
 					</div>
 				</div>
 			</div>
-			<!-- <div class="couple-wrap animate-box">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.9857659451816!2d109.50988482924919!3d-7.015978668620501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x109bd61b591b0ef4!2zN8KwMDAnNTcuNSJTIDEwOcKwMzAnMzcuNiJF!5e0!3m2!1sen!2sid!4v1639713225627!5m2!1sen!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-			</div> -->
+			<div style="clear:both"></div>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" style="margin-top: 5em; margin-bottom: 0;">
+					<p>Insya Allah acara akan berlangsung pada:</p>
+					<h3>Sabtu, 12 Februari 2022</h3>
+					<h3>di Pekalongan, Jawa Tengah.</h3>
+					<p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila <i>Bapak/Ibu/Saudara/i</i> <b class="guest-name"></b> berkenan hadir untuk memberikan doa restu kepada kedua mempelai.</p>
+				</div>
+			</div>
 		</div>
-	</div>
-	
-	<div id="map" class="fh5co-map">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.9857659451816!2d109.50988482924919!3d-7.015978668620501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x109bd61b591b0ef4!2zN8KwMDAnNTcuNSJTIDEwOcKwMzAnMzcuNiJF!5e0!3m2!1sen!2sid!4v1639713225627!5m2!1sen!2sid" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 	</div>
 
 	<div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/img_bg_3.jpg);">
@@ -164,6 +159,7 @@
 									<div class="event-col">
 										<i class="icon-clock"></i>
 										<span>07:00 AM</span>
+										<span>- Selesai</span>
 									</div>
 									<div class="event-col">
 										<i class="icon-calendar"></i>
@@ -179,7 +175,8 @@
 									<h3>Resepsi</h3>
 									<div class="event-col">
 										<i class="icon-clock"></i>
-										<span>10:00 AM</span>
+										<span>12:00 AM</span>
+										<span>- Selesai</span>
 									</div>
 									<div class="event-col">
 										<i class="icon-calendar"></i>
@@ -197,55 +194,19 @@
 		</div>
 	</div>
 
-	<div id="fh5co-couple-story">
+	<div id="fh5co-map">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<span>Perjalanan Cinta Kami</span>
-					<h2>Kisah Kami</h2>
-					<p>Semacam kisah.</p>
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box" style="margin-bottom: 2em;">
+					<span>Peta</span>
+					<h2>Lokasi Acara</h2>
+					<p><b>Kediaman Mempelai Putri</b><br>Jl. Raya Kesesi, Kaumam, Kaibahan, Kesesi,<br>Kabupaten Pekalongan, Jawa Tengah 51162</p>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 col-md-offset-0">
-					<ul class="timeline animate-box">
-						<li class="animate-box">
-							<div class="timeline-badge" style="background-image:url(images/couple-1.jpg);"></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Pertama kali ketemuan</h3>
-									<span class="date">Awal 2017</span>
-								</div>
-								<div class="timeline-body">
-									<p>Ketemuan di depan kantor kami.</p>
-								</div>
-							</div>
-						</li>
-						<li class="timeline-inverted animate-box">
-							<div class="timeline-badge" style="background-image:url(images/couple-2.jpg);"></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Menjalin hubungan</h3>
-									<span class="date">Pertengahan 2017</span>
-								</div>
-								<div class="timeline-body">
-									<p>Selang beberapa waktum, kami akhirnya menjalin hubungan.</p>
-								</div>
-							</div>
-						</li>
-						<li class="animate-box">
-							<div class="timeline-badge" style="background-image:url(images/couple-3.jpg);"></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Bertunangan</h3>
-									<span class="date">Akhir 2021</span>
-								</div>
-								<div class="timeline-body">
-									<p>Menuju serius, kami pun mulai melangkah untuk bertunangan.</p>
-								</div>
-							</div>
-						</li>
-			    	</ul>
+				<div class="col-md-12 text-center">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.9857659451816!2d109.50988482924919!3d-7.015978668620501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x109bd61b591b0ef4!2zN8KwMDAnNTcuNSJTIDEwOcKwMzAnMzcuNiJF!5e0!3m2!1sen!2sid!4v1639713225627!5m2!1sen!2sid" width="500" height="500" style="border:0;" allowfullscreen="true" loading="lazy" class="mt-2"></iframe>
+				</div>
+				<div class="col-md-12 text-center">
+					<a href="https://www.google.com/maps/place/7%C2%B000'57.5%22S+109%C2%B030'37.6%22E/@-7.0159722,109.5098972,19z/data=!4m5!3m4!1s0x0:0x655ee5bc6b5a9fa6!8m2!3d-7.0159722!4d109.5104444" class="btn btn-info btn-sm" target="_blank" style="margin-top: 2em;"><i class="icon-direction"></i> Buka Google Map</a>
 				</div>
 			</div>
 		</div>
@@ -255,9 +216,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<span>Kenangan Kami</span>
-					<h2>Galeri Romantis</h2>
-					<p>Kisah cinta kami.</p>
+					<span>Potret</span>
+					<h2>Galeri Kenangan</h2>
 				</div>
 			</div>
 			<div class="row row-bottom-padded-md">
@@ -275,52 +235,15 @@
 		</div>
 	</div>
 
-	<div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url(images/img_bg_5.jpg);">
+	<div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url(images/img_bg_5.jpg);background-position: center bottom;">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="display-t">
 					<div class="display-tc">
-						<div class="col-md-3 col-sm-6 animate-box">
-							<div class="feature-center">
-								<span class="icon">
-									<i class="icon-users"></i>
-								</span>
-
-								<span class="counter js-counter" data-from="0" data-to="500" data-speed="5000" data-refresh-interval="50">1</span>
-								<span class="counter-label">Estimated Guest</span>
-
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-6 animate-box">
-							<div class="feature-center">
-								<span class="icon">
-									<i class="icon-user"></i>
-								</span>
-
-								<span class="counter js-counter" data-from="0" data-to="1000" data-speed="5000" data-refresh-interval="50">1</span>
-								<span class="counter-label">We Catter</span>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-6 animate-box">
-							<div class="feature-center">
-								<span class="icon">
-									<i class="icon-calendar"></i>
-								</span>
-								<span class="counter js-counter" data-from="0" data-to="402" data-speed="5000" data-refresh-interval="50">1</span>
-								<span class="counter-label">Events Done</span>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-6 animate-box">
-							<div class="feature-center">
-								<span class="icon">
-									<i class="icon-clock"></i>
-								</span>
-
-								<span class="counter js-counter" data-from="0" data-to="2345" data-speed="5000" data-refresh-interval="50">1</span>
-								<span class="counter-label">Hours Spent</span>
-
-							</div>
+						<div class="col-12 animate-box text-white">
+							<h4 style="color:#fff">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu merasa tenang dan tentram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir."</h4>
+							<h3 style="color:#fff">(QS. Ar-Rum: 21)</h3>
 						</div>
 					</div>
 				</div>
@@ -333,7 +256,7 @@
 			<div class="row">
 				<div class="row animate-box">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<span>Harapan Terbaik</span>
+						<span>Harapan & Do'a</span>
 						<h2>Ucapan Sahabat</h2>
 					</div>
 				</div>
@@ -388,7 +311,7 @@
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2>Tetap Patuhi Prokes</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					<p>Terkait dengan kondisi pandemi Covid-19 yang terjadi saat ini, tanpa mengurangi rasa hormat kami bermaksud untuk menerapkan protokol kesehatan pencegahan penularan virus Covid-19 selama acara resepsi berlangsung.</p>
 				</div>
 			</div>
 
@@ -396,31 +319,31 @@
 				<div class="col-md-6">
 					<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
 						<span class="icon">
-							<i class="icon-calendar"></i>
+							<i class="icon-user"></i>
 						</span>
 						<div class="feature-copy">
 							<h3>Memakai Masker</h3>
-							<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+							<p>Para tamu wajib menggunakan masker selama berada di dalam area resepsi.</p>
 						</div>
 					</div>
 
 					<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
 						<span class="icon">
-							<i class="icon-image"></i>
+							<i class="icon-hand"></i>
 						</span>
 						<div class="feature-copy">
 							<h3>Mencuci Tangan</h3>
-							<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+							<p>Para tamu wajib mencuci tangan atau menggunakan hand sanitizer sebelum memasuki area resepsi.</p>
 						</div>
 					</div>
 
 					<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
 						<span class="icon">
-							<i class="icon-video"></i>
+							<i class="icon-ruler"></i>
 						</span>
 						<div class="feature-copy">
-							<h3>Mnajaga Jarak</h3>
-							<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+							<h3>Menjaga Jarak</h3>
+							<p>Para tamu wajib menjaga jarak satu sama lain selama berada di dalam area resepsi.</p>
 						</div>
 					</div>
 
@@ -428,7 +351,7 @@
 
 				<div class="col-md-6 animate-box">
 					<div class="fh5co-video fh5co-bg" style="background-image: url(images/img_bg_3.jpg); ">
-						<a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video2"></i></a>
+						<a href="#" class="popup-vimeo"><i class="icon-video2"></i></a>
 						<div class="overlay"></div>
 					</div>
 				</div>
@@ -445,26 +368,30 @@
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2>Berkenan untuk hadir?</h2>
-					<p>Mohon untuk mengisi buku tamu ini. Terimakasih. Salam hangat dari kami <3</p>
+					<p>Mohon untuk mengisi buku tamu ini.<br>
+						Terimakasih. Salam hangat dari kami <i class="icon-heart2"></i></p>
 				</div>
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-10 col-md-offset-1">
-					<form class="form-inline">
-						<div class="col-md-4 col-sm-4">
+					<form class="form-inline" id="formGuestBook">
+						<input type="hidden" name="guestPlace">
+						<input type="hidden" name="guestReff">
+						<div class="col-12">
 							<div class="form-group">
-								<label for="nama" class="sr-only">Nama</label>
-								<input type="text" class="form-control" id="nama" placeholder="Nama">
+								<label for="guest-name" class="sr-only">Nama</label>
+								<input type="text" class="form-control" id="guest-name" name="guestName" placeholder="Nama">
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-4">
+						<div class="col-12">
 							<div class="form-group">
-								<label for="pesan" class="sr-only">Pesan</label>
-								<input type="text" class="form-control" id="pesan" placeholder="Pesan">
+								<label for="guest-msg" class="sr-only">Tulis Ucapan</label>
+								<textarea class="form-control" id="guest-msg" name="guestMsg" placeholder="Tulis Ucapan" rows="4"></textarea>
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-4">
-							<button type="submit" class="btn btn-default btn-block">Saya akan Hadir</button>
+						<div class="col-12 text-center">
+							<button type="button" class="btn btn-default">Saya berhalangan Hadir</button>
+							<button type="button" class="btn btn-success">Saya akan Hadir</button>
 						</div>
 					</form>
 				</div>
@@ -493,6 +420,12 @@
 		</div>
 	</footer>
 	</div>
+<div style="height:50px;width:60px;position: absolute;bottom:0;z-index:-1;visibility: hidden;">
+	<audio id="player" autoplay loop>
+		<source src="qRwWgRqE8D.mp3" type="audio/mp3" >
+	</audio>
+</div>
+<div class="play-pause btn-play-pause" id="button-control"><img src="images/play-pause.svg" alt="play pause" width=25px></div>
 
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
@@ -516,7 +449,8 @@
 	<!-- Magnific Popup -->
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/magnific-popup-options.js"></script>
-
+	<link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" >
+	<script src=https://cdn.plyr.io/3.6.8/plyr.js></script>
 	<!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
 	<script src="js/simplyCountdown.js"></script>
 	
@@ -541,10 +475,25 @@
         enableUtc: false
     });
 
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		const guestName = urlParams.get('u');
+		const guestPlace = urlParams.get('p');
+		const guestReff = urlParams.get('r');
+		// const guest2 = getAllUrlParams(queryString);
+		// console.log(queryString);
+		// console.log(guestName);
+		
+		$('#fh5co-header .display-tc .guest-name').html((guestName)?guestName:'Tamu Undangan');
+		$('#fh5co-couple b.guest-name').html((guestName)?guestName:'');
+		$('#fh5co-header .display-tc .guest-place').html((guestPlace)?guestPlace:'Tempat');
+		$('#formGuestBook input[name="guestName"]').val((guestName)?guestName:'');
+		$('#formGuestBook input[name="guestReff"]').val((guestReff)?guestReff:'');
+		$('#formGuestBook input[name="guestPlace"]').val((guestPlace)?guestPlace:'Tempat');
 
-
-
-
+		// window.addEventListener("contextmenu", function(e) {
+		// 		e.preventDefault()
+		// }, !1);
 
 
 </script>
