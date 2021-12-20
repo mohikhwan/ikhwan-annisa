@@ -1874,4 +1874,8 @@ form label {
   cursor: pointer;
 }
 
+#qrcode img{
+  margin: 5em auto 0 auto
+}
+
 /*# sourceMappingURL=style.css.map */
