@@ -395,7 +395,7 @@ h1, h2, h3, h4, h5, h6, figure {
   #quote,
   #event {
     height: inherit;
-    padding: 7em 0;
+    padding: 5em 0;
   }
   #quote .display-t,
   #quote .display-tc,
@@ -1022,7 +1022,7 @@ form label {
 #gallery,
 #map,
 .fh5co-section {
-  padding: 7em 0;
+  padding: 5em 0;
   clear: both;
 }
 @media screen and (max-width: 768px) {
@@ -1869,7 +1869,7 @@ form label {
   left: 20px;
   z-index: 3;
   position: fixed;
-  background: rgb(255,255,255,0.5);
+  background: rgb(0,0,0,0.5);
   padding: 0px 5px;
   cursor: pointer;
 }
