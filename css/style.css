@@ -1953,3 +1953,9 @@ form label {
       font-size: 2rem;
   }
 }
+
+footer span.heartpulse{
+  color:red; 
+  /* position: absolute;
+  animation: pulse 1s ease infinite */
+}
