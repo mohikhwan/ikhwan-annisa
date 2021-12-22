@@ -1,0 +1,118 @@
+@font-face{
+  font-family:"Flaticon";
+  src:url(../fonts/flaticon/font/Flaticon.eot);
+  src:url(../fonts/flaticon/font/Flaticon.eot?#iefix) format("embedded-opentype") , 
+  url(../fonts/flaticon/font/Flaticon.woff) format("woff") , 
+  url(../fonts/flaticon/font/Flaticon.ttf) format("truetype") ,
+   url(../fonts/flaticon/font/Flaticon.svg#Flaticon) format("svg");
+  font-weight:normal;
+  font-style:normal
+}
+
+html, body, .page-container, .page-container .main-cover {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins",Arial,sans-serif;
+}
+
+h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
+  line-height: 1.5;
+  color: rgba(0,0,0,.9);
+  font-weight: 400;
+}
+
+#bg-video {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: -100;
+  background-image: url(../images/tm-astro-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* .page-container{
+  background: rgba(0,0,0,.2);
+} */
+
+.page-container .main-heading h1{
+  font-family: "Great Vibes",cursive;
+  font-size: 9vw;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.page-container .main-heading .subheading {
+  font-size: 2vw;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 7px;
+  position: relative;
+}
+
+.page-container .main-heading .subheading:before {
+  position: absolute;
+  top: 50%;
+  left: -150px;
+  content: '';
+  width: 130px;
+  height: 2px;
+  background: #fff;
+}
+
+.page-container .main-heading .subheading:after {
+  position: absolute;
+  top: 50%;
+  right: -150px;
+  content: '';
+  width: 130px;
+  height: 2px;
+  background: #fff;
+}
+
+.page-container .main-heading .icon{
+  line-height:0;
+  height:7vw;
+  font-size:14vw;
+  color:#fff
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before, [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-family: Flaticon;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page-container .main-heading .icon .flaticon-rose-outline-variant-with-vines-and-leaves:before {
+  content: "\f101";
+}
+
+.page-container .main-heading p {
+  font-size: 2vw;
+  color: #fff;
+}
+
+@keyframes blink {
+  from { border-color: transparent }
+  to { border-color: orange; }
+}
+
+.page-container .main-heading p .txt-rotate{
+  font-weight: bold
+}
