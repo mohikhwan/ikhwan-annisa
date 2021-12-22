@@ -465,9 +465,9 @@ $(document).on('click', '#formGuestBook button', function(event){
 		// 	201: function(data, textStatus, jqXHR) {
 		// 		let greeting = "";
 		// 		if(guestPresence=="hadir"){
-		// 			greeting = 'Terima kasih <b>'+form.find('input[name="guestName"]').val()+'</b> telah mengisi buku tamu.<br>Sampai jumpa di hari bahagia kami..';
+		// 			greeting = 'Terima kasih <b>'+form.find('input[name="guestName"]').val()+'</b> telah menulis ucapan.<br>Sampai jumpa di hari bahagia kami..';
 		// 		}else if(guestPresence=="berhalangan"){
-		// 			greeting = 'Terima kasih <b>'+form.find('input[name="guestName"]').val()+'</b> telah mengisi buku tamu.<br>Kami maklum akan kehadiranmu,<br>Sampai jumpa dikesempatan lain ya!';
+		// 			greeting = 'Terima kasih <b>'+form.find('input[name="guestName"]').val()+'</b> telah menulis ucapan.<br>Kami maklum akan kehadiranmu,<br>Sampai jumpa dikesempatan lain ya!';
 		// 		}
 		// 		Swal.fire({
 		// 			title: 'Terima asih!',
@@ -487,9 +487,9 @@ $(document).on('click', '#formGuestBook button', function(event){
 		success: function(response){
 			let greeting = "";
 			if(guestPresence=="hadir"){
-				greeting = 'Terima kasih <b>'+form.find('input[name="guestName"]').val()+'</b> telah mengisi buku tamu.<br>Sampai jumpa di hari bahagia kami..';
+				greeting = 'Terima kasih <b>'+form.find('input[name="guestName"]').val()+'</b> telah menulis ucapan.<br>Sampai jumpa di hari bahagia kami..';
 			}else if(guestPresence=="berhalangan"){
-				greeting = 'Terima kasih <b>'+form.find('input[name="guestName"]').val()+'</b> telah mengisi buku tamu.<br>Kami maklum akan kehadiranmu,<br>Sampai jumpa dikesempatan lain ya!';
+				greeting = 'Terima kasih <b>'+form.find('input[name="guestName"]').val()+'</b> telah menulis ucapan.<br>Kami maklum akan kehadiranmu,<br>Sampai jumpa dikesempatan lain ya!';
 			}
 			Swal.fire({
 				title: 'Terima asih!',

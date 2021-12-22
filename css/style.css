@@ -871,7 +871,7 @@ form label {
   #header .display-tc h1,
   #quote .display-tc h1,
   .cover .display-tc h1 {
-    font-size: 30px;
+    font-size: 40px;
   }
 }
 #header .display-tc h2,
@@ -1573,6 +1573,7 @@ form label {
   height: 25px;
   cursor: pointer;
   text-decoration: none;
+  display: none;
 }
 .fh5co-nav-toggle.active i::before, .fh5co-nav-toggle.active i::after {
   background: #444;
@@ -1664,7 +1665,8 @@ form label {
 }
 @media screen and (max-width: 768px) {
   .fh5co-nav-toggle {
-    display: block;
+    /* display: block; */
+    display: none;
   }
 }
 
@@ -1943,11 +1945,8 @@ form label {
   color: #fff;
 }
 @media (max-width: 992px) {
-  .navbar .navbar-nav {
-      flex-direction: inherit;
-  }
-  .navbar .navbar-nav .nav-item .nav-link {
-      padding: 1rem;
+  .navbar .navbar-nav .nav-item .nav-link span{
+      font-size: 14px;
   }
   .navbar .navbar-nav .nav-item .nav-link svg {
       font-size: 2rem;
@@ -1958,4 +1957,10 @@ footer span.heartpulse{
   color:red; 
   /* position: absolute;
   animation: pulse 1s ease infinite */
+}
+
+@media (max-width: 768px) {
+  #map iframe {
+    width: 100%;
+  }
 }
