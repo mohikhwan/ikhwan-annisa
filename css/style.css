@@ -900,7 +900,8 @@ form label {
 .cover .display-tc .btn {
   padding: 15px 20px;
   background: #fff !important;
-  color: #ffb72d;
+  /* color: #ffb72d; */
+  color: #000;
   border: none !important;
   font-size: 14px;
   text-transform: uppercase;
@@ -1865,7 +1866,6 @@ form label {
 .gotop .animate-box {
   opacity: 0;
 }
-
 .play-pause {
   bottom: 90px;
   left: 20px;
@@ -1875,13 +1875,10 @@ form label {
   padding: 0px 5px;
   cursor: pointer;
 }
-
 #qrcode img{
   margin: 0 auto
 }
-
 /*# sourceMappingURL=style.css.map */
-
 .navbar {
   padding: 0 !important;
   margin: 0;
@@ -1913,7 +1910,6 @@ form label {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
-}
 }
 .navbar .navbar-nav .nav-item {
   font-weight: 600;
@@ -1952,15 +1948,52 @@ form label {
       font-size: 2rem;
   }
 }
-
 footer span.heartpulse{
   color:red; 
   /* position: absolute;
   animation: pulse 1s ease infinite */
 }
-
 @media (max-width: 768px) {
   #map iframe {
     width: 100%;
   }
+}
+.ucapan-container, .undangan-container {
+  border: 1px solid #ffb72d;
+  background: rgba(255, 183, 45, 0.2);
+  min-height: 500px;
+  max-height: 500px;
+  overflow: auto;
+}
+.ucapan-container .ucapan-box{
+  margin: 10px;
+  border-bottom: 1px solid #ffb72d;
+  padding: 10px;
+}
+.ucapan-container .ucapan-box .ucapan-name{
+  margin-bottom: 0
+}
+.ucapan-container .ucapan-box .ucapan-date{
+  float: right;
+  top: -10px
+}
+.ucapan-container .ucapan-box .ucapan-img{
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-right: 10px;
+  border-radius: 50px;
+}
+.badge-pink{
+  background-color: #ff66b0;
+}
+.badge-danger{
+  background-color: #dc3545;
+}
+.badge-primary{
+  background-color: #007bff;
+}
+
+.badge-success{
+  background-color: #28a745;
 }
