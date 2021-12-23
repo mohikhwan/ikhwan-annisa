@@ -169,3 +169,45 @@ $(document).on('click', '#formGuestBook button', function(event){
 		}
 	});
 });
+
+function typingCover(){
+  let coding = `import { Undangan } from 'Pernikahan';
+  import { Ikhwan, Annisa } from 'Pekalongan';
+  
+  function AcaraPernikahan() {
+    const tanggalPernikahan = new Date('2021-02-12');
+    return(
+      &lt;Undangan 
+        mempelaiPria={Ikhwan}
+        mempelaiWanita={Annisa}
+        acara={tanggalPernikahan}
+        di='Kesesi Pekalongan' />
+    )
+  }
+  
+  export default AcaraPernikahan;`;
+  // console.log(coding);
+  let i = 0;
+  $('#cover-undangan .editor-body').show();
+  let intervalTyping = setInterval(function(){
+    if(i < coding.length){
+      let typing = coding.substring(0, i+1);
+      $('#cover-undangan code').text(typing);
+      Prism.highlightAll();
+      i++;
+    }else{
+      $('#cover-undangan button').fadeIn();
+      clearInterval(intervalTyping);
+      // CLICK ANYWHERE TO BUKA UNDANGAN
+      // document.body.addEventListener('click', function(event){
+      //   $('#cover-undangan').hide();
+      // }, true); 
+      $('#cover-undangan code').find('span.token:last').addClass('blink-typing');
+    }
+  }, 50);
+}
+typingCover();
+
+$('#cover-undangan button').on('click', function(event){
+  $('#cover-undangan').hide();
+});

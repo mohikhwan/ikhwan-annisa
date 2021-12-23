@@ -2011,3 +2011,56 @@ footer span.heartpulse{
 #tamu-reader{
   width:100%
 }
+
+#cover-undangan {
+  width: 100%;
+  height: 100vh;
+  background: #2B2B48;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  overflow: hidden;
+}
+
+#cover-undangan button{
+  color: #111;
+  font-weight: bold;
+  display: none;
+}
+
+#cover-undangan .editor-header{
+  width: 100%;
+  padding: 12px;
+  overflow: hidden;
+  background: #2B2B48;
+  z-index: 3;
+}
+
+#cover-undangan .editor-header a{
+  float: left;
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  border-radius: 8px;
+  background: #FC615D;
+}
+#cover-undangan .editor-header a.maximum{
+  background: #34C84A;
+}
+#cover-undangan .editor-header a.minimum{
+  background: #FDBC40;
+}
+
+code[class*="language-"], pre[class*="language-"] {
+  background: #2B2B48;
+}
+
+#cover-undangan code .blink-typing { 
+  border-right: 0.2em solid #ddd; 
+  animation: blinkCoding .8s infinite;
+}
+@keyframes blinkCoding {
+  from { border-color: transparent }
+  to { border-color: #ddd; }
+}
