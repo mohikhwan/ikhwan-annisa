@@ -171,13 +171,15 @@ $(document).on('click', '#formGuestBook button', function(event){
 });
 
 function typingCover(){
+  // let audioTyping = $('#keyboard-typing')[0];
+  // audioTyping.play();
   let coding = `import { Undangan } from 'Pernikahan';
   import { Ikhwan, Annisa } from 'Pekalongan';
   
   function AcaraPernikahan() {
     const tanggalPernikahan = new Date('2021-02-12');
     return(
-      &lt;Undangan 
+      <Undangan 
         mempelaiPria={Ikhwan}
         mempelaiWanita={Annisa}
         acara={tanggalPernikahan}
@@ -196,6 +198,7 @@ function typingCover(){
       Prism.highlightAll();
       i++;
     }else{
+      // audioTyping.pause();
       $('#cover-undangan button').fadeIn();
       clearInterval(intervalTyping);
       // CLICK ANYWHERE TO BUKA UNDANGAN
@@ -204,7 +207,7 @@ function typingCover(){
       // }, true); 
       $('#cover-undangan code').find('span.token:last').addClass('blink-typing');
     }
-  }, 50);
+  }, 30);
 }
 typingCover();
 
