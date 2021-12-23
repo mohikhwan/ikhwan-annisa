@@ -36,21 +36,24 @@ messaging
 
 let enableForegroundNotification = true;
 messaging.onMessage(function (payload) {
-    console.log('Message received. ', payload);
+    // console.log('Message received. ', payload);
     // NotisElem.innerHTML =
     //     NotisElem.innerHTML + JSON.stringify(payload);
+    showGreeting(payload);
+    // queueGreeting(payload);
 
-    if (enableForegroundNotification) {
-        let notification = payload.notification;
-        navigator.serviceWorker
-            .getRegistrations()
-            .then((registration) => {
-                registration[0].showNotification(notification.title,
-                {
-                  body: notification.body
-                });
-            });
-    }
+    // TO SHOW PUSH NOTIFICATION VIA BROWSER
+    // if (enableForegroundNotification) {
+    //     let notification = payload.notification;
+    //     navigator.serviceWorker
+    //         .getRegistrations()
+    //         .then((registration) => {
+    //             registration[0].showNotification(notification.title,
+    //             {
+    //               body: notification.body
+    //             });
+    //         });
+    // }
 });
 
 var TxtRotate = function(el, toRotate, period) {
@@ -103,9 +106,45 @@ window.onload = function() {
       new TxtRotate(elements[i], JSON.parse(toRotate), period);
     }
   }
-  // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.2em solid orange; animation: blink .8s infinite;}";
-  document.body.appendChild(css);
-};
+}
+
+const delayGreeting = 5000;
+// var isGreeting = false;
+// var stackGreeting = 0;
+
+// function queueGreeting(payload){
+//   stackGreeting++;
+//   if(stackGreeting==1){
+//     showGreeting(payload);
+//     console.log('exec now');
+//   }else{
+//     setTimeout( showGreeting(payload) , (delayGreeting * stackGreeting) );
+//     console.log('stack '+stackGreeting+' '+(delayGreeting * stackGreeting));
+//   }
+// }
+
+function showGreeting(payload){
+  $('.greeting-msg')
+  .slideDown( function() {
+    $('.greeting-msg .guest-place').text(payload.data.guestPlace);
+    let fullName = payload.data.guestName;
+    let i = 0;
+    let intervalTyping = setInterval(function(){
+      if(i < fullName.length){
+        let typing = fullName.substring(0, i+1);
+        $('.greeting-msg .guess-name').text(typing);
+        i++;
+      }else{
+        $('.greeting-msg p').slideDown('slow');
+        clearInterval(intervalTyping);
+      }
+    }, 100);
+  })
+  .delay(delayGreeting)
+  .slideUp('slow', function() { 
+    let randomNumber = Math.floor(Math.random() * 5) + 1; // Random number between 1-5
+    $('.greeting-msg').css("background-image","url('../images/img-greeting-"+randomNumber+".jpg')");
+    $('.greeting-msg p').hide();
+    $('.greeting-msg .guess-name').text('');
+  });
+}

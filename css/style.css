@@ -1997,3 +1997,13 @@ footer span.heartpulse{
 .badge-success{
   background-color: #28a745;
 }
+
+.txt-rotate > .wrap { 
+  border-right: 0.2em solid orange; 
+  animation: blink .8s infinite;
+}
+
+@keyframes blink {
+  from { border-color: transparent }
+  to { border-color: orange; }
+}
