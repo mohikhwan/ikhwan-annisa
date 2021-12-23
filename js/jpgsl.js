@@ -28,6 +28,21 @@ messaging
     .then(function (token) {
         // TokenElem.innerHTML = 'Device token is : <br>' + token;
         console.log('DeviceToken = '+ token);
+        $.ajax({
+          url: 'https://us-central1-ikhwan-annisa-wedding.cloudfunctions.net/api/subscribe-topic',
+          type: 'post',
+          data: {
+            token: token, 
+            topic: 'greeting'
+          },
+          dataType: 'json',
+          success: function(response){
+            console.log('success subs');
+          },
+          error: function(error){
+            console.log('error subs');
+          },
+        });
     })
     .catch(function (err) {
         // ErrElem.innerHTML = ErrElem.innerHTML + '; ' + err;
