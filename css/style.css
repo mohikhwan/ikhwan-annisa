@@ -2007,3 +2007,7 @@ footer span.heartpulse{
   from { border-color: transparent }
   to { border-color: orange; }
 }
+
+#tamu-reader{
+  width:100%
+}

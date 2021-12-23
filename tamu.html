@@ -96,9 +96,9 @@
     <div class="fh5co-section">
       <div class="container">
         <div class="row">
-          <div class="col-md-4 animate-box">
+          <div class="col-md-6 animate-box">
             <h3>Form Buku Tamu</h3>
-            <form action="#">
+            <form action="#" method="post" id="form-tamu-undangan">
               <div class="row">
                 <div class="col-md-12 form-group">
                   <label>Nama Tamu</label>
@@ -111,8 +111,8 @@
                 <div class="col-md-12">
                   <label>Tamu Mempelai</label>
                   <div class="row form-group">
-                    <label class="col-md-6"><input type="radio" name="guestRef" value="a"> Annisa</label>
-                    <label class="col-md-6"><input type="radio" name="guestRef" value="i"> Ikhwan</label>
+                    <label class="col-md-6" style="cursor: pointer;"><input type="radio" name="guestRef" value="a"> Annisa</label>
+                    <label class="col-md-6" style="cursor: pointer;"><input type="radio" name="guestRef" value="i"> Ikhwan</label>
                   </div>
                 </div>
                 <div class="col-md-12 form-group">
@@ -121,11 +121,16 @@
                 </div>
               </div>
               <div class="form-group text-center">
+                <button type="reset" class="btn btn-light">Batal</button>
                 <button type="submit" class="btn btn-primary">Simpan</button>
               </div>
             </form>		
           </div>
-          <div class="col-md-8 animate-box">
+          <div class="col-md-6 animate-box">
+            <h3>Scan QR Code</h3>
+            <div id="tamu-reader"></div>
+          </div>
+          <div class="col-md-12 animate-box">
             <h3>Daftar Tamu</h3>
             <div class="ucapan-container" id="ucapan-container">
             </div>
@@ -158,6 +163,8 @@
     <script src="js/jquery.stellar.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/magnific-popup-options.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <script src="js/html5-qrcode.min.js"></script>
     <script src="js/jpgtm.js"></script>
 	</body>
 </html>
