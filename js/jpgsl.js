@@ -158,7 +158,7 @@ function showGreeting(payload){
   .delay(delayGreeting)
   .slideUp('slow', function() { 
     let randomNumber = Math.floor(Math.random() * 5) + 1; // Random number between 1-5
-    $('.greeting-msg').css("background-image","url('../images/img-greeting-"+randomNumber+".jpg')");
+    $('.greeting-msg').css("background-image","url('images/img-greeting-"+randomNumber+".jpg')");
     $('.greeting-msg p').hide();
     $('.greeting-msg .guess-name').text('');
   });

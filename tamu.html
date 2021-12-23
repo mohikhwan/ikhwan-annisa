@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Ucapan - Ikhwan & Annisa Wedding</title>
+		<title>Tamu - Ikhwan & Annisa Wedding</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Ikhwan dan Annisa Menikah" />
 		<meta name="keywords" content="ikhwan, annisa, menikah, wedding, invitation" />
@@ -53,7 +53,7 @@
           <div class="col-md-8 col-md-offset-2 text-center">
             <div class="display-t">
               <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                <h1>Ucapan-ucapan</h1>
+                <h1>Tamu Undangan</h1>
                 <h2>Ikhwan & Annisa Wedding</a></h2>
               </div>
             </div>
@@ -96,32 +96,28 @@
     <div class="fh5co-section">
       <div class="container">
         <div class="row">
-          <div class="col-md-4 col-md-push-8 animate-box">
-            <h3>Form Ucapan</h3>
+          <div class="col-md-4 animate-box">
+            <h3>Form Buku Tamu</h3>
             <form action="#">
-              <div class="row form-group">
-                <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-12 form-group">
                   <label>Nama Tamu</label>
                   <input type="text" name="guestName" class="form-control" placeholder="Nama Tamu">
                 </div>
-                <div class="col-md-12">
-                  <label>Tempat</label>
-                  <input type="text" name="guestPlace" class="form-control" placeholder="Tempat">
+                <div class="col-md-12 form-group">
+                  <label>Alamat</label>
+                  <input type="text" name="guestPlace" class="form-control" placeholder="Alamat">
                 </div>
-              </div>
-              <div class="row form-group">
                 <div class="col-md-12">
                   <label>Tamu Mempelai</label>
-                  <select class="form-control" name="guestRef">
-                    <option value="a">Annisa</option>
-                    <option value="i">Ikhwan</option>
-                  </select>
+                  <div class="row form-group">
+                    <label class="col-md-6"><input type="radio" name="guestRef" value="a"> Annisa</label>
+                    <label class="col-md-6"><input type="radio" name="guestRef" value="i"> Ikhwan</label>
+                  </div>
                 </div>
-              </div>
-              <div class="row form-group">
-                <div class="col-md-12">
+                <div class="col-md-12 form-group">
                   <label>Ucapan</label>
-                  <textarea name="guestMsg" rows="5" class="form-control" placeholder="Ucapan"></textarea>
+                  <textarea name="guestMsg" rows="4" class="form-control" placeholder="Ucapan"></textarea>
                 </div>
               </div>
               <div class="form-group text-center">
@@ -129,8 +125,8 @@
               </div>
             </form>		
           </div>
-          <div class="col-md-8 col-md-pull-4 animate-box">
-            <h3>Daftar Ucapan</h3>
+          <div class="col-md-8 animate-box">
+            <h3>Daftar Tamu</h3>
             <div class="ucapan-container" id="ucapan-container">
             </div>
           </div>
@@ -162,7 +158,7 @@
     <script src="js/jquery.stellar.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/magnific-popup-options.js"></script>
-    <script src="js/jpguc.js"></script>
+    <script src="js/jpgtm.js"></script>
 	</body>
 </html>
 
