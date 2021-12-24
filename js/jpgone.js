@@ -173,21 +173,21 @@ $(document).on('click', '#formGuestBook button', function(event){
 function typingCover(){
   // let audioTyping = $('#keyboard-typing')[0];
   // audioTyping.play();
-  let coding = `import { Undangan } from 'Pernikahan';
-  import { Ikhwan, Annisa } from 'Pekalongan';
-  
-  function AcaraPernikahan() {
-    const tanggalPernikahan = new Date('2021-02-12');
-    return(
-      <Undangan 
-        mempelaiPria={Ikhwan}
-        mempelaiWanita={Annisa}
-        acara={tanggalPernikahan}
-        di='Kesesi Pekalongan' />
-    )
-  }
-  
-  export default AcaraPernikahan;`;
+let coding = `import { Undangan } from 'Pernikahan';
+import { Ikhwan, Annisa } from 'Pekalongan';
+
+function Acara() {
+  const tanggalPernikahan = new Date('12 February 2021');
+  return(
+    <Undangan 
+      mempelaiPria={Ikhwan}
+      mempelaiWanita={Annisa}
+      acara={tanggalPernikahan}
+      di='Kesesi Pekalongan'/>
+  )
+}
+
+export default Acara;`;
   // console.log(coding);
   let i = 0;
   $('#cover-undangan .editor-body').show();
