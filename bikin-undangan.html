@@ -99,23 +99,35 @@
           <div class="col-md-4 animate-box">
             <h3>Bikin Undangan</h3>
             <form action="#" id="form-bikin-undangan">
-              <div class="row form-group">
-                <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label>Tamu Mempelai</label>
+                  <div class="row form-group input-radio">
+                    <div class="col col-md-12">
+                      <input id="ref-ikhwan" type="radio" name="guestRef" value="i">
+                      <label for="ref-ikhwan">
+                        <img src="images/groom.jpg"  alt="Ikhwan" />
+                        <h4>Moh Ikhwan</h4>
+                        <small>Mempelai Putra</small>
+                      </label>
+                    </div>
+                    <div class="col col-md-12">
+                      <input id="ref-annisa" type="radio" name="guestRef" value="a" checked>
+                      <label for="ref-annisa">
+                        <img src="images/bride.jpg" alt="Annisa" />
+                        <h4>Afiyatul Annisa</h4>
+                        <small>Mempelai Putri</small>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 form-group">
                   <label>Nama Tamu</label>
                   <input type="text" name="guestName" class="form-control" placeholder="Nama Tamu">
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12 form-group">
                   <label>Tempat</label>
                   <input type="text" name="guestPlace" class="form-control" placeholder="Tempat">
-                </div>
-              </div>
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <label>Tamu Mempelai</label>
-                  <select class="form-control" name="guestRef">
-                    <option value="a">Annisa</option>
-                    <option value="i">Ikhwan</option>
-                  </select>
                 </div>
               </div>
             </form>		
@@ -157,62 +169,7 @@
     <script src="js/jquery.stellar.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/magnific-popup-options.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-      const templateUndangan1 = (data) => `
-        <p class="text-center" style="padding-top:20px">
-          Assalamu'alaikum Warahmatullahi Wabarakaatuh
-          <br>
-          Tanpa mengurangi rasa hormat, izinkan kami mengundang Bapak/Ibu/Saudara/i <b>${data.guestName}</b>, untuk hadir serta memberikan do'a restu pada acara pernikahan kami.
-          <br>
-          Untuk detail acara, lokasi, dan ucapan bisa klik link di bawah ini:
-          <br>
-          <br>
-          <b>https://mohikhwan.github.io/ikhwan-annisa/?u=${encodeURI(data.guestName)}&r=${encodeURI(data.guestRef)}&p=${encodeURI(data.guestPlace)}</b>
-          <br>
-          <br>
-          Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i <b>${data.guestName}</b>, berkenan hadir.
-          <br>
-          Do'a restu Anda merupakan hadiah terindah bagi kami.
-          <br>
-          Atas kehadiran dan do'a restu yang telah diberikan, kami ucapkan terima kasih.
-          <br>
-          Wassalamu'alaikum Warahmatullahi Wabarakatuh.
-        </p>
-      `;
-      
-      const form = $('#form-bikin-undangan');
-
-      $(document).on('keyup', '#form-bikin-undangan input', function(event){
-        let guestData = {
-          guestName: form.find('input[name="guestName"]').val(),
-          guestPlace: form.find('input[name="guestPlace"]').val(),
-          guestRef: form.find('select[name="guestRef"]').val(),
-        };
-        $('#undangan-msg').html([guestData].map(templateUndangan1));
-      });
-      
-      $(document).on('change', '#form-bikin-undangan select', function(event){
-        let guestData = {
-          guestName: form.find('input[name="guestName"]').val(),
-          guestPlace: form.find('input[name="guestPlace"]').val(),
-          guestRef: form.find('select[name="guestRef"]').val(),
-        };
-        $('#undangan-msg').html([guestData].map(templateUndangan1));
-      });
-      
-      $('#undangan-copy').on('click',function(event){
-        navigator.clipboard.writeText($("#undangan-msg").text()).then(
-          function() {
-            window.alert('Teks berhasil dicopy');
-          }, 
-          function() {
-            window.alert('Teks gagal dicopy');
-          }
-        );
-      });
-      form.find('select[name="guestRef"]').change();
-    </script>
+    <script src="js/jpgbu.js"></script>
 	</body>
 </html>
 

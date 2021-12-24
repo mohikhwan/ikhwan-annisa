@@ -1,21 +1,48 @@
 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const guestName = (urlParams.get('u'))? urlParams.get('u') : 'Tamu Undangan';
+const guestPlace = (urlParams.get('p'))? urlParams.get('p') : 'Tempat';
+const guestRef = (urlParams.get('r'))? urlParams.get('r') : '';
+let typingSound = 1;
+let musicSound = 1;
+let musicPlayer = new Plyr('#music-player');
+let keyboardTyping = $('#keyboard-typing')[0];
+// const guest2 = getAllUrlParams(queryString);
+// console.log(queryString);
+// console.log(guestName);
+
 /************* Player *************/
 document.addEventListener("DOMContentLoaded",()=>{
-	var n=1;
-	const t=new Plyr("#player");
-	function i(){
-		1==n&&t.play()
-	}
-	window.player=t,
-	$(".open_invitation").click(function(){
-		t.play()
-	}),
-	window.addEventListener("touchstart",function(n){i()}),
-	window.addEventListener("scroll",function(n){i()}),
-	$(".btn-play-pause").click(function(){0==n?(t.play(),n=1):(t.pause(),n=0)}),
-	$(".open_invitation").click(function(){i()})
+  if(guestRef==="a"){
+    //CHANGE MUSIC TO GIRL SINGER IF undangan FROM annisa
+    $('#music-player source').attr('src','audio/adu-rayu-cover.mp3');
+  }else{
+    $('#music-player source').attr('src','audio/adu-rayu.mp3');
+  }
+	window.addEventListener("click",function(n){
+    playTyping();
+  });
+	window.addEventListener("touchstart",function(n){
+    playTyping();
+  });
+	window.addEventListener("scroll",function(n){
+    playTyping();
+  });
 });
-/************* custom *************/
+
+function playMusic(){
+  musicSound==1;
+  musicPlayer.play();
+}
+
+function playTyping(){
+  typingSound==1? keyboardTyping.play() : keyboardTyping.pause();
+}
+
+$('.btn-play-pause').on('click', function(event){
+  musicSound==0? (musicPlayer.play(),musicSound=1) : (musicPlayer.pause(),musicSound=0);
+});
 
 $('.guestbook-open').on('click', function(event){
 	event.preventDefault();
@@ -48,14 +75,6 @@ simplyCountdown('.simply-countdown-one', {
 //     enableUtc: false
 // });
 
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const guestName = (urlParams.get('u'))? urlParams.get('u') : 'Tamu Undangan';
-const guestPlace = (urlParams.get('p'))? urlParams.get('p') : 'Tempat';
-const guestRef = (urlParams.get('r'))? urlParams.get('r') : '';
-// const guest2 = getAllUrlParams(queryString);
-// console.log(queryString);
-// console.log(guestName);
 
 $('#header .display-tc .guest-name').html(guestName);
 $('#invitation b.guest-name').html((guestName=="Tamu Undangan")?'':guestName);
@@ -171,13 +190,13 @@ $(document).on('click', '#formGuestBook button', function(event){
 });
 
 function typingCover(){
-  // let audioTyping = $('#keyboard-typing')[0];
-  // audioTyping.play();
+musicPlayer.pause();
+playTyping();
 let coding = `import { Undangan } from 'Pernikahan';
 import { Ikhwan, Annisa } from 'Pekalongan';
 
 function Acara() {
-  const tanggalPernikahan = new Date('12 February 2021');
+  const tanggalPernikahan = new Date('12 February 2022');
   return(
     <Undangan 
       mempelaiPria={Ikhwan}
@@ -198,7 +217,8 @@ export default Acara;`;
       Prism.highlightAll();
       i++;
     }else{
-      // audioTyping.pause();
+      typingSound = 0;
+      keyboardTyping.pause();
       $('#cover-undangan button').fadeIn();
       clearInterval(intervalTyping);
       // CLICK ANYWHERE TO BUKA UNDANGAN
@@ -212,5 +232,16 @@ export default Acara;`;
 typingCover();
 
 $('#cover-undangan button').on('click', function(event){
-  $('#cover-undangan').hide();
+  $('#cover-undangan').hide(function(){
+    typingSound = 0;
+    keyboardTyping.pause();
+    playMusic();
+  });
+});
+$('#cover-undangan a').on('click', function(event){
+  $('#cover-undangan').hide(function(){
+    typingSound = 0;
+    keyboardTyping.pause();
+    playMusic();
+  });
 });

@@ -2064,3 +2064,29 @@ code[class*="language-"], pre[class*="language-"] {
   from { border-color: transparent }
   to { border-color: #ddd; }
 }
+
+#form-tamu-undangan .input-radio input[type=radio], #form-bikin-undangan .input-radio input[type=radio]{
+  position: absolute;
+  left: -9999px;
+}
+#form-tamu-undangan .input-radio label, #form-bikin-undangan .input-radio label{
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+#form-tamu-undangan .input-radio label img, #form-bikin-undangan .input-radio label img{
+  width:70px;
+  height:70px;
+  border-radius: 50px;
+  float: left;
+  margin-right: 10px;
+}
+#form-tamu-undangan .input-radio label h4, #form-bikin-undangan .input-radio label h4{
+  margin: 15px 0 0 0
+}
+#form-tamu-undangan .input-radio input[type=radio]:checked + label, #form-bikin-undangan .input-radio input[type=radio]:checked + label {
+  border: 1px solid orange;
+  box-shadow: 0 0 10px 1px orange;
+}

@@ -256,17 +256,17 @@
 
 	
 	$(function(){
-		mobileMenuOutsideClick();
+		// mobileMenuOutsideClick();
 		parallax();
-		offcanvasMenu();
-		burgerMenu();
+		// offcanvasMenu();
+		// burgerMenu();
 		contentWayPoint();
-		dropdown();
+		// dropdown();
 		testimonialCarousel();
 		goToTop();
-		loaderPage();
-		counter();
-		counterWayPoint();
+		// loaderPage();
+		// counter();
+		// counterWayPoint();
 		ancor_link();
 	});
 

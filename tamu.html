@@ -100,6 +100,27 @@
             <h3>Form Buku Tamu</h3>
             <form action="#" method="post" id="form-tamu-undangan">
               <div class="row">
+                <div class="col-md-12">
+                  <label>Tamu Mempelai</label>
+                  <div class="row form-group input-radio">
+                    <div class="col col-md-6">
+                      <input id="ref-ikhwan" type="radio" name="guestRef" value="i">
+                      <label for="ref-ikhwan">
+                        <img src="images/groom.jpg"  alt="Ikhwan" />
+                        <h4>Moh Ikhwan</h4>
+                        <small>Mempelai Putra</small>
+                      </label>
+                    </div>
+                    <div class="col col-md-6">
+                      <input id="ref-annisa" type="radio" name="guestRef" value="a">
+                      <label for="ref-annisa">
+                        <img src="images/bride.jpg" alt="Annisa" />
+                        <h4>Afiyatul Annisa</h4>
+                        <small>Mempelai Putri</small>
+                      </label>
+                    </div>
+                  </div>
+                </div>
                 <div class="col-md-12 form-group">
                   <label>Nama Tamu</label>
                   <input type="text" name="guestName" class="form-control" placeholder="Nama Tamu">
@@ -108,16 +129,9 @@
                   <label>Alamat</label>
                   <input type="text" name="guestPlace" class="form-control" placeholder="Alamat">
                 </div>
-                <div class="col-md-12">
-                  <label>Tamu Mempelai</label>
-                  <div class="row form-group">
-                    <label class="col-md-6" style="cursor: pointer;"><input type="radio" name="guestRef" value="a"> Annisa</label>
-                    <label class="col-md-6" style="cursor: pointer;"><input type="radio" name="guestRef" value="i"> Ikhwan</label>
-                  </div>
-                </div>
                 <div class="col-md-12 form-group">
                   <label>Ucapan</label>
-                  <textarea name="guestMsg" rows="4" class="form-control" placeholder="Ucapan"></textarea>
+                  <textarea name="guestMsg" rows="2" class="form-control" placeholder="Ucapan"></textarea>
                 </div>
               </div>
               <div class="form-group text-center">
