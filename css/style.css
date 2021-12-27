@@ -1035,6 +1035,7 @@ form label {
   #invitation-story,
   #invitation,
   #gallery,
+  #map,
   .fh5co-section {
     padding: 3em 0;
   }
@@ -1210,6 +1211,9 @@ form label {
   font-family: "Sacramento", Arial, serif;
 }
 @media screen and (max-width: 768px) {
+  .heading {
+    margin-bottom: 3em;
+  }
   .heading h2 {
     font-size: 40px;
   }
@@ -2026,6 +2030,7 @@ footer span.heartpulse{
   color: #111;
   font-weight: bold;
   display: none;
+  margin-top: 2em;
 }
 
 #cover-undangan .editor-header{
