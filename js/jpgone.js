@@ -16,9 +16,9 @@ let keyboardTyping = $('#keyboard-typing')[0];
 document.addEventListener("DOMContentLoaded",()=>{
   if(guestRef==="a"){
     //CHANGE MUSIC TO GIRL SINGER IF undangan FROM annisa
-    $('#music-player source').attr('src','audio/adu-rayu-cover.mp3');
+    $('#music-player source').attr('src','audio/ada-untukmu.mp3');
   }else{
-    $('#music-player source').attr('src','audio/adu-rayu.mp3');
+    $('#music-player source').attr('src','audio/ada-untukmu.mp3');
   }
 	window.addEventListener("click",function(n){
     playTyping();
