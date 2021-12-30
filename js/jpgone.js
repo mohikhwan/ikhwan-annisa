@@ -52,8 +52,7 @@ $('.guestbook-open').on('click', function(event){
 	return false;
 });
 
-var d = new Date(2022, 02, 12, 06, 00, 00, 0);
-
+var d = new Date(2022, 01, 12, 06, 00, 00, 0);
 simplyCountdown('.simply-countdown-one', {
 	year: d.getFullYear(),
 	month: d.getMonth() + 1,
