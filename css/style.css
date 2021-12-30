@@ -1981,9 +1981,15 @@ footer span.heartpulse{
   float: right;
   top: -10px
 }
+.ucapan-container .ucapan-box p{
+  margin-bottom: 10px
+}
+.ucapan-container .ucapan-box .ucapan-msg {
+  color: #111
+}
 .ucapan-container .ucapan-box .ucapan-img{
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   float: left;
   margin-right: 10px;
   border-radius: 50px;
@@ -2070,6 +2076,11 @@ code[class*="language-"], pre[class*="language-"] {
   to { border-color: #ddd; }
 }
 
+#tamu-section {
+  padding: 2em 0;
+  clear: both;
+}
+
 #form-tamu-undangan .input-radio input[type=radio], #form-bikin-undangan .input-radio input[type=radio]{
   position: absolute;
   left: -9999px;
@@ -2079,7 +2090,7 @@ code[class*="language-"], pre[class*="language-"] {
   width: 100%;
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid #ddd;
+  border: 2px solid #ddd;
 }
 #form-tamu-undangan .input-radio label img, #form-bikin-undangan .input-radio label img{
   width:70px;
@@ -2092,6 +2103,31 @@ code[class*="language-"], pre[class*="language-"] {
   margin: 15px 0 0 0
 }
 #form-tamu-undangan .input-radio input[type=radio]:checked + label, #form-bikin-undangan .input-radio input[type=radio]:checked + label {
-  border: 1px solid orange;
-  box-shadow: 0 0 10px 1px orange;
+  border: 2px solid #ffb72d;
+  background: rgba(255, 183, 45, 0.2);
+  box-shadow: 0 0 5px 0.1px #ffb72d;
+}
+
+.form-tamu-container{
+  padding-top: 20px;
+  border: 1px solid #ffb72d;
+}
+
+.scan-qr-container{
+  padding-top: 20px;
+}
+
+.daftar-tamu-container{
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 1px solid #ffb72d;
+}
+
+.cover-tamu-undangan, .cover-tamu-undangan .display-t, .cover-tamu-undangan .display-tc {
+  height: 250px !important;
+}
+
+#modal-tamu-camera canvas{
+  display: none;
 }

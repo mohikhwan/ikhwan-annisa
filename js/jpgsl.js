@@ -49,7 +49,7 @@ messaging
         console.log('Unable to get permission to notify.', err);
     });
 
-let enableForegroundNotification = true;
+let enableForegroundNotification = false;
 messaging.onMessage(function (payload) {
     // console.log('Message received. ', payload);
     // NotisElem.innerHTML =
