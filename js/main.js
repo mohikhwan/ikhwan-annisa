@@ -263,7 +263,7 @@
 		contentWayPoint();
 		// dropdown();
 		testimonialCarousel();
-		goToTop();
+		// goToTop();
 		// loaderPage();
 		// counter();
 		// counterWayPoint();

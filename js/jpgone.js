@@ -8,18 +8,19 @@ let typingSound = 1;
 let musicSound = 1;
 let musicPlayer = new Plyr('#music-player');
 let keyboardTyping = $('#keyboard-typing')[0];
-// const guest2 = getAllUrlParams(queryString);
-// console.log(queryString);
-// console.log(guestName);
 
 /************* Player *************/
 document.addEventListener("DOMContentLoaded",()=>{
   if(guestRef==="a"){
+		$('.bank-jago-ikhwan').hide();
     //CHANGE MUSIC TO GIRL SINGER IF undangan FROM annisa
+		$('#music-player source').attr('src','audio/ada-untukmu.mp3');
+  }else if(guestRef==="i"){
+		$('.bank-jago-annisa').hide();
     $('#music-player source').attr('src','audio/ada-untukmu.mp3');
   }else{
     $('#music-player source').attr('src','audio/ada-untukmu.mp3');
-  }
+	}
 	window.addEventListener("click",function(n){
     playTyping();
   });
@@ -41,7 +42,15 @@ function playTyping(){
 }
 
 $('.btn-play-pause').on('click', function(event){
-  musicSound==0? (musicPlayer.play(),musicSound=1) : (musicPlayer.pause(),musicSound=0);
+  musicSound==0? (musicPlayer.play(),musicSound=1,$('.btn-play-pause').html(`<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-music-note-beamed" viewBox="0 0 16 16"><path d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2zm9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2z"/><path fill-rule="evenodd" d="M14 11V2h1v9h-1zM6 3v10H5V3h1z"/><path d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4V2.905z"/></svg>`)) : (musicPlayer.pause(),musicSound=0,$('.btn-play-pause').html(`<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-volume-mute-fill" viewBox="0 0 16 16"><path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06zm7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0z"/></svg>`));
+});
+
+$('#send-gift').on('click', function(event){
+	event.preventDefault();
+	$('html, body').animate({
+		scrollTop: $('#amplop').offset().top
+	}, 'slow');
+	return false;
 });
 
 $('.guestbook-open').on('click', function(event){
@@ -65,15 +74,6 @@ simplyCountdown('.simply-countdown-one', {
 		pluralLetter: ''
 	},
 });
-
-//jQuery example
-// $('#simply-countdown-losange').simplyCountdown({
-//     year: d.getFullYear(),
-//     month: d.getMonth() + 1,
-//     day: d.getDate(),
-//     enableUtc: false
-// });
-
 
 $('#header .display-tc .guest-name').html(guestName);
 $('#invitation b.guest-name').html((guestName=="Tamu Undangan")?'':guestName);
@@ -244,3 +244,23 @@ $('#cover-undangan a').on('click', function(event){
     playMusic();
   });
 });
+
+
+function copyToClipboard(elem) {
+	var $temp = $("<input>");
+	$("body").append($temp);
+	$temp.val(elem).select();
+	document.execCommand("copy");
+	$temp.remove();
+}
+
+$(".btn-copy-norek").on("click", function() {
+	var elem = $(this).data("norek");
+	$(this).html('Rekening Berhasil Disalin!');
+	$(this).prop('disabled', true);
+	setTimeout(function(){
+		$(".btn-copy-norek").html('Salin Nomor Rekening');
+		$(".btn-copy-norek").prop('disabled', false);
+	},1000);
+	copyToClipboard(elem);
+})

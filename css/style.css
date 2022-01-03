@@ -898,7 +898,7 @@ form label {
 #header .display-tc .btn,
 #quote .display-tc .btn,
 .cover .display-tc .btn {
-  padding: 15px 20px;
+  padding: 10px 20px;
   background: #fff !important;
   /* color: #ffb72d; */
   color: #000;
@@ -1015,6 +1015,7 @@ form label {
 
 #wish,
 #prokes,
+#amplop,
 #guestbook,
 #footer,
 #event,
@@ -1029,6 +1030,7 @@ form label {
 @media screen and (max-width: 768px) {
   #wish,
   #prokes,
+  #amplop,
   #guestbook,
   #footer,
   #event,
@@ -1872,12 +1874,45 @@ form label {
 }
 .play-pause {
   bottom: 90px;
-  left: 20px;
+  right: 20px;
   z-index: 3;
   position: fixed;
-  background: rgb(0,0,0,0.5);
+  /* background: rgb(0,0,0,0.5); */
+  background: #ffb72d;
   padding: 0px 5px;
   cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius: 4px;
+}
+.play-pause img{
+  height: 40px;
+  margin: 0 auto;
+  display: table-cell;
+}
+.play-pause svg{
+  height: 40px;
+  margin: 0 auto;
+  display: table-cell;
+  color: #fff;
+}
+#send-gift{
+  bottom: 140px;
+  right: 20px;
+  z-index: 3;
+  position: fixed;
+  background: #ffb72d;
+  padding: 0px 5px;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius: 4px;
+}
+#send-gift svg{
+  height: 40px;
+  margin: 0 auto;
+  display: table-cell;
+  color: #fff;
 }
 #qrcode img{
   margin: 0 auto
@@ -1885,13 +1920,15 @@ form label {
 /*# sourceMappingURL=style.css.map */
 .navbar {
   padding: 0 !important;
-  margin: 0;
-  box-shadow: 0 -6px 10px -5px hsla(0, 0%, 44.3%, 0.3);
-  border: none !important;
+  margin: 0 2rem;
+  /* box-shadow: 0 -6px 10px -5px hsla(0, 0%, 44.3%, 0.3); */
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+  border: 1px solid #ddd;
+  border-radius: 50rem;
   background: #f8f9fa;
   position: fixed;
   right: 0;
-  bottom: 0;
+  bottom: 10px;
   left: 0;
   z-index: 1030;
   display: -ms-flexbox;
@@ -1903,6 +1940,7 @@ form label {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  overflow: hidden;
 }
 .navbar .navbar-nav {
   margin: 0 auto;
@@ -1933,9 +1971,12 @@ form label {
 .navbar .navbar-nav .nav-item .nav-link:hover {
   color: #ffb72d;
 }
+.navbar .navbar-nav .nav-item .nav-link span{
+  font-size: 13px;
+}
 .navbar .navbar-nav .nav-item .nav-link svg {
-  font-size: 2.5rem;
-  margin-bottom: 0.35rem;
+  font-size: 2rem;
+  /* margin-bottom: 0.35rem; */
 }
 .navbar-light .navbar-nav .active > .nav-link {
   color: #fff;
@@ -1946,10 +1987,10 @@ form label {
 }
 @media (max-width: 992px) {
   .navbar .navbar-nav .nav-item .nav-link span{
-      font-size: 14px;
+      font-size: 11px;
   }
   .navbar .navbar-nav .nav-item .nav-link svg {
-      font-size: 2rem;
+      font-size: 1.75rem;
   }
 }
 footer span.heartpulse{
@@ -2009,13 +2050,13 @@ footer span.heartpulse{
 }
 
 .txt-rotate > .wrap { 
-  border-right: 0.2em solid orange; 
+  border-right: 0.2em solid #ffb72d; 
   animation: blink .8s infinite;
 }
 
 @keyframes blink {
   from { border-color: transparent }
-  to { border-color: orange; }
+  to { border-color: #ffb72d; }
 }
 
 #tamu-reader{
@@ -2130,4 +2171,21 @@ code[class*="language-"], pre[class*="language-"] {
 
 #modal-tamu-camera canvas{
   display: none;
+}
+
+#amplop .card{
+  width: 100%;
+  margin: 1rem 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+#amplop .card img{
+  width: 70%;
+  margin-bottom: 3rem;
+}
+#amplop .card h2{
+  margin-bottom: 0;
 }
