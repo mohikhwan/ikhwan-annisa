@@ -145,7 +145,7 @@
 		var owl = $('.owl-carousel-fullwidth');
 		owl.owlCarousel({
 			autoplay: true,
-			autoplayTimeout:2000,
+			autoplayTimeout:3000,
 			items: 1,
 			loop: true,
 			margin: 0,

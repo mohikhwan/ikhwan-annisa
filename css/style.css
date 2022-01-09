@@ -1873,7 +1873,7 @@ form label {
   opacity: 0;
 }
 .play-pause {
-  bottom: 90px;
+  bottom: 100px;
   right: 20px;
   z-index: 3;
   position: fixed;
@@ -1897,7 +1897,7 @@ form label {
   color: #fff;
 }
 #send-gift{
-  bottom: 140px;
+  bottom: 150px;
   right: 20px;
   z-index: 3;
   position: fixed;
@@ -1914,8 +1914,15 @@ form label {
   display: table-cell;
   color: #fff;
 }
+#qrcode-section {
+  background: rgba(255, 183, 45, 0.5);;
+}
 #qrcode img{
-  margin: 0 auto
+  margin: 0 auto;
+  padding: 10px;
+  background:  #fff;
+  border-radius: 5px;
+  border: 1px solid #eee
 }
 /*# sourceMappingURL=style.css.map */
 .navbar {
@@ -1928,7 +1935,7 @@ form label {
   background: #f8f9fa;
   position: fixed;
   right: 0;
-  bottom: 10px;
+  bottom: 2rem;
   left: 0;
   z-index: 1030;
   display: -ms-flexbox;

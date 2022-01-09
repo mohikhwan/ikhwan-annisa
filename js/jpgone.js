@@ -85,12 +85,12 @@ $('#formGuestBook input[name="guestPlace"]').val(guestPlace);
 // window.addEventListener("contextmenu", function(e) {
 // 		e.preventDefault()
 // }, !1);
-var qrtext = 'Ikhwan&Annisa;'+guestName+';'+guestPlace+';'+guestRef;
+var qrtext = 'Ikhwan&AnnisaWedding;'+guestName+';'+guestPlace+';'+guestRef;
 var qrcode = new QRCode("qrcode", {
 	width: 200,
 	height: 200,
 	colorDark : "#000000",
-	colorLight : "#f5f5f5",
+	colorLight : "#fff",
 });
 qrcode.makeCode(qrtext);
 
