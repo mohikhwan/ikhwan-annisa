@@ -1915,7 +1915,8 @@ form label {
   color: #fff;
 }
 #qrcode-section {
-  background: rgba(255, 183, 45, 0.5);;
+  background: rgb(255 219 150);
+  /* background: rgba(255, 183, 45, 0.5); */
 }
 #qrcode img{
   margin: 0 auto;
@@ -2017,17 +2018,23 @@ footer span.heartpulse{
   max-height: 500px;
   overflow: auto;
 }
+.ucapan-container .ucapan-box:not(:last-child){
+  border-bottom: 1px solid #ffb72d;
+}
 .ucapan-container .ucapan-box{
   margin: 10px;
-  border-bottom: 1px solid #ffb72d;
   padding: 10px;
 }
 .ucapan-container .ucapan-box .ucapan-name{
   margin-bottom: 0
 }
 .ucapan-container .ucapan-box .ucapan-date{
-  float: right;
-  top: -10px
+  float: left;
+  font-size: 1rem
+}
+.ucapan-container .ucapan-box .ucapan-info{
+  font-size: 1.2rem;
+  margin-bottom: 0
 }
 .ucapan-container .ucapan-box p{
   margin-bottom: 10px
@@ -2036,8 +2043,8 @@ footer span.heartpulse{
   color: #111
 }
 .ucapan-container .ucapan-box .ucapan-img{
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   float: left;
   margin-right: 10px;
   border-radius: 50px;
