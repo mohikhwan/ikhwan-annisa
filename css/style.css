@@ -1039,7 +1039,7 @@ form label {
   #gallery,
   #map,
   .fh5co-section {
-    padding: 3em 0;
+    padding: 4em 0;
   }
 }
 
@@ -1918,12 +1918,16 @@ form label {
   background: rgb(255 219 150);
   /* background: rgba(255, 183, 45, 0.5); */
 }
-#qrcode img{
+#qrcode{
+  display: flex;
+  background: #fff;
+  width: 250px;
+  height: 250px;
   margin: 0 auto;
+  padding: 0 auto;
   padding: 10px;
-  background:  #fff;
   border-radius: 5px;
-  border: 1px solid #eee
+  border: 1px solid #eee;
 }
 /*# sourceMappingURL=style.css.map */
 .navbar {
@@ -2116,6 +2120,10 @@ footer span.heartpulse{
 }
 #cover-undangan .editor-header a.minimum{
   background: #FDBC40;
+}
+
+#cover-undangan .editor-body{
+  margin: 0 1rem;
 }
 
 code[class*="language-"], pre[class*="language-"] {
