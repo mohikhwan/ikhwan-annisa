@@ -51,7 +51,7 @@
         </div>
       </header>
 
-      <div id="couple" class="section-gray">
+      <!-- <div id="couple" class="section-gray">
         <div class="container" style="padding:2em 0">
           <div class="couple-wrap animate-box">
             <div class="couple-half">
@@ -80,16 +80,24 @@
           </div>
           <div style="clear:both"></div>
         </div>
-      </div>
+      </div> -->
 
       <div id="tamu-section">
         <div class="container">
           <div class="row">
             <div class="col-md-6 animate-box form-tamu-container">
-              <h3>Form Buku Tamu</h3>
-              <div class="form-tamu-msg"></div>
+              <h3>Buku Tamu Digital</h3>
               <form action="#" method="post" id="form-tamu-undangan">
                 <div class="row">
+                  <div class="col-md-12 form-group my-2">
+                    <video id="video-camera" width="100%" height="auto" autoplay></video>
+                    <canvas id="canvas-camera" width="1080px" height="720px" style="display:none;"></canvas>
+                    <div class="mt-2">
+                      <label>Pilih Kamera :</label>
+                      <select id="tamu-camera" name="tamu-camera"></select>
+                    </div>
+                  </div>
+                  <div class="form-tamu-msg"></div>
                   <div class="col-md-12 mb-2">
                     <label>Tamu Mempelai</label>
                     <div class="row form-group input-radio">
@@ -111,11 +119,11 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-12 form-group my-2">
+                  <div class="col-md-6 form-group my-2">
                     <label>Nama Tamu<b class="text-danger">*</b></label>
                     <input type="text" name="guestName" class="form-control" placeholder="Nama Tamu" autocomplete="off" required>
                   </div>
-                  <div class="col-md-12 form-group my-2">
+                  <div class="col-md-6 form-group my-2">
                     <label>Alamat<b class="text-danger">*</b></label>
                     <input type="text" name="guestPlace" class="form-control" placeholder="Alamat" required>
                   </div>
@@ -124,7 +132,7 @@
                     <textarea name="guestMsg" rows="2" class="form-control" placeholder="Ucapan"></textarea>
                   </div>
                 </div>
-                <div class="my-2 form-group text-center">
+                <div class="mb-2 form-group text-center">
                   <button type="reset" class="btn btn-secondary">Batal</button>
                   <button type="submit" class="btn btn-primary">Simpan</button>                  
                 </div>
@@ -134,11 +142,11 @@
               <h3>Scan QR Code</h3>
               <div id="tamu-reader"></div>
             </div>
-            <div class="col-md-12 animate-box daftar-tamu-container">
+            <!-- <div class="col-md-12 animate-box daftar-tamu-container">
               <h3>Daftar Tamu</h3>
               <div class="ucapan-container" id="ucapan-container">
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

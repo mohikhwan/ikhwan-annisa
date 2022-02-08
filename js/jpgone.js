@@ -62,11 +62,12 @@ $('.guestbook-open').on('click', function(event){
 	return false;
 });
 
-var d = new Date(2022, 01, 12, 06, 00, 00, 0);
+var d = new Date("12 February 2022 08:00:00");
 simplyCountdown('.simply-countdown-one', {
 	year: d.getFullYear(),
 	month: d.getMonth() + 1,
 	day: d.getDate(),
+	hours: d.getHours(),
 	words: {
 		days: 'hari',
 		hours: 'jam',
@@ -74,6 +75,7 @@ simplyCountdown('.simply-countdown-one', {
 		seconds: 'detik',
 		pluralLetter: ''
 	},
+	enableUtc: false
 });
 
 $('#header .display-tc .guest-name').html(guestName);
@@ -201,8 +203,8 @@ function Acara() {
     <Undangan 
       mempelaiPria={Ikhwan}
       mempelaiWanita={Annisa}
-      acara={tanggalPernikahan}
-      di='Kesesi Pekalongan'/>
+      waktu={tanggalPernikahan}
+      lokasi='Kesesi Pekalongan'/>
   )
 }
 
@@ -291,12 +293,9 @@ function getUcapanData() {
     complete: function(){
     },
     success: function(response){
-      console.log(response);
       if(response && Object.keys(response).length > 0){
         Object.keys(response).forEach(function(item){
           let dataItem = response[item];
-          console.log(dataItem);
-          console.log(dataItem.item.timestamp);
           ucapanContainer.append([dataItem].map(templateUcapanBox));
         });
       }

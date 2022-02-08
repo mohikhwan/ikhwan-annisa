@@ -5,12 +5,12 @@ const templateTamuBox = (data) => `
     <a target="_blank" href="${ data.item.guestImg ? data.item.guestImg:'images/default-user.png'}">
       <img class="ucapan-img" src="${ data.item.guestImg ? data.item.guestImg:'images/default-user.png'}" style="object-fit:cover;border:5px solid ${(data.item.guestRef=='a')?'#ff66b0':'#007bff'}" />
     </a>
-    <span class="ucapan-date">${new Date(data.item.timestamp).toLocaleString("en-US", {timeZone: "Asia/Jakarta"})}</span>
     <h3 class="ucapan-name">${data.item.guestName}</h3>
     <p class="ucapan-info">
       <small class="badge rounded-pill badge-${(data.item.guestRef=='a')?'pink':'primary'}">${(data.item.guestRef=='a')?'annisa':'ikhwan'}</small>
       <small class="badge rounded-pill bg-secondary">${data.item.guestPlace}</small>
     </p>
+    <span class="ucapan-date">${new Date(data.item.timestamp).toLocaleString("en-US", {timeZone: "Asia/Jakarta"})}</span>
     <p class="ucapan-msg" style="clear:both">${data.item.guestMsg}</p>
   </div>
 `;
@@ -41,21 +41,18 @@ function getTamuData() {
     }
   });
 }
-getTamuData();
+// getTamuData();
 
-
-$(document).on('submit', '#form-tamu-undangan', async function(event){
-  event.preventDefault();
-
+async function loadCamera(){
   let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
   kameraTamuVideo.srcObject = stream;
   
   await navigator.mediaDevices.enumerateDevices()
   .then(function(devices) {
-    $('#modal-tamu-camera select[name="tamu-camera"]').html('');
+    $('#form-tamu-undangan select[name="tamu-camera"]').html('');
     devices.forEach(function(device) {
       if(device.kind === 'videoinput'){
-        $('#modal-tamu-camera select[name="tamu-camera"]').append('<option value="'+device.deviceId+'">'+device.label+'</option>');
+        $('#form-tamu-undangan select[name="tamu-camera"]').append('<option value="'+device.deviceId+'">'+device.label+'</option>');
       }
       // console.log(device.kind + ": " + device.label + " id = " + device.deviceId);
     });
@@ -63,8 +60,15 @@ $(document).on('submit', '#form-tamu-undangan', async function(event){
   .catch(function(err) {
     console.log(err.name + ": " + err.message);
   });
+}
+loadCamera();
 
-  $('#modal-tamu-camera').modal('show');
+$(document).on('submit', '#form-tamu-undangan', async function(event){
+  event.preventDefault();
+  
+  submitBukutamu();
+
+  // $('#modal-tamu-camera').modal('show');
 
 	// let form = $('#form-tamu-undangan');
 	// $.ajax({
@@ -106,7 +110,6 @@ $(document).on('submit', '#form-tamu-undangan', async function(event){
 });
 
 function onScanSuccess(decodedText, decodedResult) {
-  // console.log(`Scan result: ${decodedText}`, decodedResult);
   if(decodedResult.result.format.formatName=="QR_CODE"){
     let splitResult = decodedText.split(';');
     if(splitResult[0] == "Ikhwan&AnnisaWedding"){
@@ -115,28 +118,11 @@ function onScanSuccess(decodedText, decodedResult) {
       $('#form-tamu-undangan input[name="guestRef"][value="'+splitResult[3]+'"]').attr('checked', true);
       $('#form-tamu-undangan textarea[name="guestMsg"]').focus();
       // $('#form-tamu-undangan').submit();
-      // Swal.fire({
-      //   title: 'Undangan Valid!',
-      //   icon: 'success',
-      //   html: 'Data tamu berhasil ditemukan, silakan tulis <b>ucapan</b> atau langsung <b>simpan</b>.',
-      //   timer: 2000,
-      //   timerProgressBar: true,
-      // });
       $('.form-tamu-container .form-tamu-msg').html('<div class="alert alert-success">Data tamu berhasil ditemukan, silakan tulis <b>ucapan</b> dan <b>simpan</b>.</div>');
     }else{
-      // return Swal.fire(
-      //   'Error',
-      //   'Mohon maaf, undangan tidak valid',
-      //   'error'
-      // );
       $('.form-tamu-container .form-tamu-msg').html('<div class="alert alert-danger">Mohon maaf, undangan tidak valid</div>');
     }
   }else{
-    // return Swal.fire(
-    //   'Error',
-    //   'Mohon maaf, hanya gunakan kode QR',
-    //   'error'
-    // );
     $('.form-tamu-container .form-tamu-msg').html('<div class="alert alert-danger">Mohon maaf, hanya gunakan kode QR</div>');
   }
   setTimeout(function(){
@@ -147,11 +133,10 @@ function onScanSuccess(decodedText, decodedResult) {
 var html5QrcodeScanner = new Html5QrcodeScanner("tamu-reader", { fps: 10, qrbox: 250 });
 html5QrcodeScanner.render(onScanSuccess);
 
-$(document).on('click', '#capture-image', function(event){ 
+function submitBukutamu(){ 
   // kameraTamuCanvas.getContext('2d').drawImage(kameraTamuVideo, 0, 0, 1280, 720);
   kameraTamuCanvas.getContext('2d').drawImage(kameraTamuVideo, 0, 0, kameraTamuCanvas.width, kameraTamuCanvas.height);
   let image_data_url = kameraTamuCanvas.toDataURL('image/jpeg');
-  // console.log(image_data_url);
 
   let form = $('#form-tamu-undangan');
   form.append('<input type="hidden" name="guestImg" value="'+image_data_url+'">');
@@ -197,9 +182,9 @@ $(document).on('click', '#capture-image', function(event){
 			});
 		}
 	});
-});
+};
 
-$(document).on('change', '#modal-tamu-camera select[name="tamu-camera"]', async function(event){
+$(document).on('change', '#form-tamu-undangan select[name="tamu-camera"]', async function(event){
   let cameraId = $(this).val();
   let stream = await navigator.mediaDevices.getUserMedia({ video: {deviceId:{exact:cameraId}}, audio: false });
   kameraTamuVideo.srcObject = stream;
